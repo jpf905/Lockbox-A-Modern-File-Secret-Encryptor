@@ -1,0 +1,17 @@
+README.md
+pyproject.toml
+src/lockbox/cli.py
+src/lockbox/crypto.py
+src/lockbox/header.py
+src/lockbox/keys.py
+src/lockbox/sign.py
+src/lockbox/stream.py
+src/lockbox.egg-info/PKG-INFO
+src/lockbox.egg-info/SOURCES.txt
+src/lockbox.egg-info/dependency_links.txt
+src/lockbox.egg-info/entry_points.txt
+src/lockbox.egg-info/requires.txt
+src/lockbox.egg-info/top_level.txt
+tests/test_header.py
+tests/test_roundtrip.py
+tests/test_vectors.py
