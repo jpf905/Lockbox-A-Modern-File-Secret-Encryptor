@@ -52,7 +52,10 @@ def encrypt(input: pathlib.Path,
     else:
         # password mode
         salt = random_bytes(SALT_LEN)
-        pw = getpass.getpass("Passphrase: ").encode()
+        try:
+            pw = getpass.getpass("Passphrase: ").encode()
+        except (Exception, KeyboardInterrupt):
+            pw = input("Passphrase (visible fallback): ").encode()
         key = derive_key_argon2id(pw, salt)
         header = Header(version=1, mode="password", aead="xchacha20poly1305",
                         kdf="argon2id", salt_hex=salt.hex(), filename=input.name,
@@ -111,4 +114,8 @@ def sign(input: pathlib.Path, sk: str, out: Optional[pathlib.Path] = None) -> No
 def verify(input: pathlib.Path, sig: pathlib.Path, vk: str)-> None:
     ok = verify_detached(vk, input.read_bytes(), sig.read_bytes())
     print("[green]VALID[/green]" if ok else "[red]INVALID[/red]")
+    
+    
+if __name__ == "__main__":
+    app()
     
