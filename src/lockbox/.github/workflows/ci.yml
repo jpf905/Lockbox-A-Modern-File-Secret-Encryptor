@@ -2,7 +2,7 @@ name: Lockbox CI
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [ Main, main, master ]
   pull_request:
 
 jobs:
