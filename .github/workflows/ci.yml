@@ -1,0 +1,35 @@
+name: Lockbox CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+
+jobs:
+  test:
+    name: Run Tests, Lint, and Type Checks
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .
+          pip install pytest hypothesis ruff mypy
+
+      - name: Lint with Ruff
+        run: ruff check src tests
+
+      - name: Type check with Mypy
+        run: mypy src
+
+      - name: Run unit tests
+        run: pytest -q
