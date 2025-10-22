@@ -1,6 +1,6 @@
 ## **Lockbox — A Modern File & Secret Encryptor**
 
-![Lockbox CI](https://github.com/jpf905/Lockbox-A-Modern-File-Secret-Encryptor/actions/workflows/ci.yml/badge.svg)
+![Lockbox CLI Demo](assets/lockbox-demo.png)
 
 
 **Lockbox** is a lightweight, modern encryption toolkit designed for secure file protection and secret sharing.  
