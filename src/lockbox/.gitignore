@@ -1,0 +1,5 @@
+*.lbx
+*.dec
+demo.txt
+__pycache__/
+*.pyc
