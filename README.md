@@ -1,6 +1,7 @@
 ## **Lockbox — A Modern File & Secret Encryptor**
 
-![Lockbox CLI Demo](assets/lockbox-demo.png)(assets/lockbox-demo2.png)
+![Lockbox CLI Demo](assets/lockbox-demo.png)
+![Lockbox CLI Demo](assets/lockbox-demo2.png)
 
 
 **Lockbox** is a lightweight, modern encryption toolkit designed for secure file protection and secret sharing.  
