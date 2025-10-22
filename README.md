@@ -22,25 +22,25 @@ This project demonstrates skills in **cybersecurity, cryptography, and secure so
 
 ### **Example Output**
 
-Below is an example of Lockbox in action — demonstrating password-based encryption, decryption, and digital signature verification from the command line.
+Below is an example of **Lockbox** in action — showing password-based encryption, decryption, and signature verification from the command line.
 
 ```bash
 $ echo "cybersecurity portfolio demo" > demo.txt
 
 $ python -m lockbox.cli encrypt demo.txt
 Passphrase: ********
-[green]Encrypted → demo.txt.lbx[/green]
+Encrypted → demo.txt.lbx
 
 $ python -m lockbox.cli decrypt demo.txt.lbx
 Passphrase: ********
-[green]Decrypted → demo.dec[/green]
+Decrypted → demo.dec
 
 $ cat demo.dec
 cybersecurity portfolio demo
 
 $ python -m lockbox.cli gensign > verify.hex 2> sign.hex
 $ python -m lockbox.cli sign demo.txt --sk $(cat sign.hex)
-[green]Wrote signature → demo.txt.sig[/green]
+Wrote signature → demo.txt.sig
 
 $ python -m lockbox.cli verify demo.txt --sig demo.txt.sig --vk $(cat verify.hex)
-[green]VALID[/green]
+VALID
